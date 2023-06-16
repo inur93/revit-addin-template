@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Rúni Vørmadal",
+  "classifications": [
+    "Revit",
+    "Addin"
+  ],
+  "identity": "Vormadal.Revit.Addins",
+  "name": "Revit Addin",
+  "shortName": "revitaddin",
+  "sourceName": "RevitAddinTemplate",
+  "preferNameDirectory": true,
+  "precedence": 9850,
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "symbols": {
+    "RevitAssemblies": {
+      "displayName": "Revit Assemblies Location",
+      "description": "The relative path to folder containing RevitUI.dll etc.",
+      "type": "parameter",
+      "defaultValue": "..\\..\\RevitAssemblies",
+      "replaces": "..\\..\\RevitAssemblies"
+    },
+    "RevitVersion": {
+      "displayName": "Revit Version",
+      "description": "Revit version",
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "Revit 2022"
+        },
+        {
+          "choice": "Revit 2023"
+        },
+        {
+          "choice": "Revit 2024"
+        }
+      ],
+      "replaces": "Revit 2023"
+    }
+  },
+  "sources": [
+    {
+      "exclude": [
+        "**/[Bb]in/**",
+        "**/[Oo]bj/**",
+        "**/template.config/**",
+        "**/*.filelist",
+        "**/*.user",
+        "**/*.lock.json",
+        "RevitAssemblies",
+        "*.sln",
+        "*.ps1"
+      ]
+    }
+  ]
+}
