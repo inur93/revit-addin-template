@@ -39,7 +39,12 @@
           "choice": "Revit 2024"
         }
       ],
-      "replaces": "Revit 2023"
+      "replaces": "Revit 2024"
+    },
+    "AddinId": {
+      "type": "generated",
+      "generator": "guid",
+      "replaces": "a90f714d-3bcf-43df-ab4e-823a4b42e1a1"
     }
   },
   "sources": [

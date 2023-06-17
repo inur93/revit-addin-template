@@ -4,8 +4,6 @@ using Autodesk.Revit.Attributes;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 using Autodesk.Revit.UI.Selection;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 
 #endregion
@@ -20,18 +18,17 @@ namespace RevitAddinTemplate
           ref string message,
           ElementSet elements)
         {
-            UIApplication uiapp = commandData.Application;
-            UIDocument uidoc = uiapp.ActiveUIDocument;
-            Application app = uiapp.Application;
-            Document doc = uidoc.Document;
+            var uiapp = commandData.Application;
+            var uidoc = uiapp.ActiveUIDocument;
+            var app = uiapp.Application;
+            var doc = uidoc.Document;
 
             // Access current selection
 
-            Selection sel = uidoc.Selection;
+            var sel = uidoc.Selection;
 
             // Retrieve elements from database
-
-            FilteredElementCollector col
+            var col
               = new FilteredElementCollector(doc)
                 .WhereElementIsNotElementType()
                 .OfCategory(BuiltInCategory.INVALID)
@@ -46,7 +43,7 @@ namespace RevitAddinTemplate
 
             // Modify document within a transaction
 
-            using (Transaction tx = new Transaction(doc))
+            using (var tx = new Transaction(doc))
             {
                 tx.Start("Transaction Name");
                 tx.Commit();
