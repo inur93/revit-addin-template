@@ -1,4 +1,4 @@
 
 
 
-dotnet new install "$PSScriptRoot\RevitAddinTemplate"
+dotnet new install "$PSScriptRoot\RevitAddinTemplate" --force
