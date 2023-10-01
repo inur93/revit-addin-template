@@ -29,3 +29,8 @@ CD $TemplateDir
 dotnet new install RevitAddinTemplate --force
 CD $CurDir
 ```
+
+# Development
+
+## Installer properties
+To pass default properties from installer to a configuration program see available properties here https://learn.microsoft.com/en-us/windows/win32/msi/property-reference?redirectedfrom=MSDN
